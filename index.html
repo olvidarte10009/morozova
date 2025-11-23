@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Документ</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        * { 
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        body {
+            background: #000; 
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+
+    header {
+    padding: 15px 30px;
+    border-radius: 100px;
+    background: #111;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* подстраиваемся под экран */
+    max-width: 1200px;
+    margin: 20px auto 0 auto; /* центрирование на больших экранах */
+    }
+
+    .texting {
+        display: flex;               /* включаем flex */
+        justify-content: center;     /* центрируем весь блок по горизонтали */
+        align-items: center;         /* выравнивание по вертикали */
+        gap: 10px;                   /* равный отступ между <p> */
+        margin: 10px auto;           /* центрируем блок через auto слева и справа */
+    }
+
+    .texting p {
+        font-size: 15px;
+        width: 80px;                 /* фиксированная ширина блока */
+        height: 30px;                /* фиксированная высота блока */
+        margin: 0;                   /* убираем внешние отступы */
+        display: flex;               /* для центрирования текста внутри p */
+        justify-content: center;     /* горизонтальное центрирование текста */
+        align-items: center;         /* вертикальное центрирование текста */
+    }
+    .searchAndKor {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .searchAndKor button {
+        width: 130px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background: #FF6A00;
+        color: #fff;
+        cursor: pointer;
+    }
+    .header-right i {
+        font-size: 20px;
+        color: #FF6A00; /* тёмно-оранжевый цвет */
+        cursor: pointer;
+    }
+
+
+
+
+        .OsnovaAfterHeader img {
+            width: 1230px;
+            filter: brightness(70%);
+            border-radius: 100px;
+            height: 600px;
+            margin-left: 60px;
+            margin-top: 50px;
+        }
+
+        .OsnovaAfterHeaderText h1 {
+            margin-top: -450px;
+            width: 500px;
+            position: relative;
+            margin-left: 100px;
+            font-size: 45px;
+            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+        }
+
+
+    
+
+
+        @media (max-width: 430px) {
+
+        
+          .newOsnova {
+        flex-direction: column;
+        gap: 18px;
+         margin-top: 100px;
+        
+        align-items: center;
+    }
+
+    .furniture-card {
+        width: 90%;
+        margin-top: 50px;
+        height: 300px;
+        margin-left: 35px;
+        max-width: 250px;
+        border: 1px solid #2c2c2c;   /* 🔥 обводка карточки */
+        border-radius: 12px;
+        padding-bottom: 12px;
+        background: #111;            /* слегка тёмный фон */
+        overflow: hidden;
+    }
+
+    .furniture-card img {
+    width: 100%;             /* растягивается ровно по размеру карточки */
+    max-width: 220px;        /* ❗ ограничение размера картинки */
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin-left: -25px;    
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
+    .furniture-card h3 {
+        font-size: 15px;
+        margin: 10px 0 4px 12px;
+    }
+
+    .furniture-card p {
+        font-size: 11px;
+        margin: 0 12px 10px 12px;
+        opacity: 0.85;
+    }
+
+    .price-buy {
+        padding: 0 12px 5px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .price-buy .price {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ff6a00;
+    }
+
+    .price-buy button {
+        width: 85px;
+        height: 30px;
+        font-size: 12px;
+        background: #ff6a00;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+
+            header {
+                padding: 15px;
+                margin-top: 25px;
+                width: 320px;
+                margin-left: 0px;
+                flex-wrap: wrap; 
+            }
+
+
+            .logo {
+                font-size: 15px;
+
+            }
+
+            .texting {
+                display: none;
+                 
+            }
+
+           
+
+            .searchAndKor {
+                gap: 10px;
+                margin-left: -20px;
+            }
+
+            
+
+            .searchAndKor button {
+                width: 100px;
+                height: 35px;
+                margin-right:5px ;
+            }
+
+            .OsnovaAfterHeader img{
+                width: 280px;
+                margin-left: 20px;
+                filter: brightness(60%);
+                border-radius: 20px;
+                height: 170px;
+               
+            }
+
+                .OsnovaAfterHeaderText h1 {
+                    font-size: 16px;      
+                    width: 250px;  
+                    font-family: 'Roboto', sans-serif;      
+                    margin-top: -130px;    
+                    margin-left: 30px;    
+                }
+
+                .OsnovaAfterHeaderText p {
+                    color:gray;
+                    font-size: 12px;      
+                    width: 245px;  
+                    font-family: 'Roboto', sans-serif;      
+                    margin-top: 130px;    
+                    margin-left: 30px;
+                    z-index: 10;
+                }
+
+                .butOne button{
+                    width: 150px;         
+                    margin-top: 50px;
+                    margin-left: 30px;
+                    height: 40px;             /* высота кнопки */
+                    border: none;             /* убираем стандартную рамку */
+                    border-radius: 10px;      /* скругление углов */
+                    background: #FF6A00;      /* цвет кнопки (тёмно-оранжевый) */
+                    color: #fff;              /* цвет текста */
+                    font-size: 14px;          /* размер текста */
+                    cursor: pointer;          /* курсор при наведении */
+                    transition: 0.3s;   
+                }
+
+                .butOne a {
+                    text-decoration: ;
+                    margin-left: 10px;
+                }
+
+
+        }
+
+
+    </style>
+</head>
+<body>  
+
+    <header>
+        <div class="logo">BlackShop</div>
+        <div class="texting">
+            <p>Contact</p>
+            <p>Email</p>
+            <p>AboutMe</p>
+            <p>Location</p>
+        </div>    
+            <div class="searchAndKor">
+
+                <i class="fas fa-search"></i>
+                <i class="far fa-heart"></i>
+                  <button>Shop</button>
+            </div>      
+    </header>
+
+    <div class="OsnovaAfterHeader">
+        <img src="ivannew.jpg"/>
+        <div class="OsnovaAfterHeaderText">
+            <h1>Изготовление мебели на заказ под ключ</h1>
+            <p>Наша кухня — это сочетание современного дизайна и функциональности. Каждая деталь продумана, чтобы готовка и отдых были максимально удобными и приятными</p>
+            <div class="butOne">
+                <button>Детали</button>
+                <a href='#'>Contacts</a>
+            </div>
+        </div>
+        <div class="newOsnova">
+    <div class="furniture-card">
+        <img src="lesha.jpg" alt="Кухня 1">
+        <h3>Современная кухня</h3>
+        <p>Функциональная и стильная кухня для вашего дома.</p>
+        <div class="price-buy">
+            <span class="price">₴25,000</span>
+            <button>Купить</button>
+        </div>
+    </div>
+
+    <div class="furniture-card">
+        <img src="danilem.jpg" alt="Кухня 2">
+        <h3>Классическая кухня</h3>
+        <p>Элегантный дизайн с высококачественными материалами.</p>
+        <div class="price-buy">
+            <span class="price">₴30,000</span>
+            <button>Купить</button>
+        </div>
+    </div>
+
+    <div class="furniture-card">
+        <img src="lesha.jpg" alt="Кухня 3">
+        <h3>Минималистичная кухня</h3>
+        <p>Простота и комфорт в каждой детали.</p>
+        <div class="price-buy">
+            <span class="price">₴22,000</span>
+            <button>Купить</button>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+</body>
+</html>
