@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Studio</title>
+
+    <!-- Тонкий премиальный шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        /* ====== ПРЕЛОАДЕР ====== */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            z-index: 999;
+            transition: opacity 1s ease;
+        }
+
+        #preloader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ====== Анимация картинки ====== */
+        .logo-img {
+            width: 160px;
+            height: 130px;margin-top:-40px;
+            opacity: 0;
+            animation: imgPop 1.9s ease-out forwards;
+        }
+
+        @keyframes imgPop {
+            0%   { opacity: 0; transform: rotate(-180deg) scale(0.5); filter: blur(6px); }
+            50%  { opacity: 1; transform: rotate(10deg) scale(1.15); filter: blur(0px); }
+            100% { opacity: 1; transform: rotate(0deg) scale(1); }
+        }
+
+        /* ====== ТЕКСТ O L V I D A R T E ====== */
+        #brandText {
+            display: flex;
+            margin-top:-30px;
+            gap: 3px;
+            font-size: 28px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            opacity: 1;
+        }
+
+        #brandText span {
+            opacity: 0;
+            animation: letterShow 0.45s forwards ease-out;
+        }
+
+        @keyframes letterShow {
+            0%   { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ====== КОНТЕНТ САЙТА ====== */
+        .hidden {
+            display: none;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 0;
+            background: #111;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.7;
+        }
+
+        /* ====== МОБИЛКА 430px ====== */
+        @media (max-width: 430px) {
+            .logo-img {
+                width: 100px;
+                height: 100px;
+            }
+            #brandText {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ====== ПРЕЛОАДЕР ====== -->
+<div id="preloader">
+
+    <!-- ТВОЯ КАРТИНКА -->
+    <img class="logo-img" src="logoOlvid.png" alt="logo">
+
+    <!-- СЮДА ПОЯВЛЯЮТСЯ БУКВЫ -->
+    <div id="brandText"></div>
+
+</div>
+
+<!-- ====== ОСНОВНОЙ САЙТ ====== -->
+<div id="content" class="hidden">
+    <header>Furniture Studio</header>
+
+    <section class="hero">
+        <h2>Лучшая мебель для вашего дома</h2>
+        <p>Стиль. Качество. Удобство.</p>
+    </section>
+</div>
+
+<script>
+
+    /* ====== АНИМАЦИЯ БУКВА ЗА БУКВОЙ ====== */
+    const text = "Olvidarte";
+    const container = document.getElementById("brandText");
+
+    text.split("").forEach((letter, i) => {
+        const span = document.createElement("span");
+        span.textContent = letter;
+
+        // каждая буква появляется со своей задержкой
+        span.style.animationDelay = `${1.2 + i * 0.15}s`;
+
+        container.appendChild(span);
+    });
+
+    /* ====== УБИРАЕМ ПРЕЛОАДЕР ====== */
+    setTimeout(() => {
+        document.getElementById("preloader").classList.add("hide");
+
+        setTimeout(() => {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("content").classList.remove("hidden");
+        }, 1000);
+
+    }, 3000);
+</script>
+
+</body>
+</html>
